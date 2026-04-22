@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ====================================================
+       FINSKY LAB — Engineering Dashboard
+       Site: lab.finsky.my.id
+       Theme: Dark Professional / Monospace Terminal
+       Author: [YOUR NAME HERE]
+       Last Updated: [DATE]
+  ==================================================== -->
+  <title>FINSKY LAB // Engineering Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== SCAN LINE OVERLAY ===================== -->
+  <div class="scanline-overlay" aria-hidden="true"></div>
+
+  <!-- ===================== HEADER / NAV ===================== -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <!-- ===== BRAND: Change display name here ===== -->
+      <a href="#" class="brand-logo" aria-label="FINSKY LAB Home">
+        <span class="brand-bracket">[</span>
+        <span class="brand-name">FINSKY</span>
+        <span class="brand-accent">LAB</span>
+        <span class="brand-bracket">]</span>
+        <span class="brand-cursor" aria-hidden="true">_</span>
+      </a>
+
+      <!-- ===== NAV: Add/remove links as needed ===== -->
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#tools" class="nav-link">Portfolio</a></li>
+          <li><a href="#recon" class="nav-link">Monitoring</a></li>
+          <li><a href="#experiments" class="nav-link">Labs</a></li>
+        </ul>
+        <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </nav>
+    </div>
+    <!-- Status bar under the header -->
+    <div class="header-statusbar" aria-hidden="true">
+      <span class="status-item"><span class="status-dot status-dot--online"></span>SYSTEM ONLINE</span>
+      <span class="status-item">ENV: HARDENED</span>
+      <span class="status-item">NODE: arch-primary</span>
+      <span class="status-item" id="live-clock">--:--:--</span>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main class="site-main" role="main">
+
+    <!-- =============== HERO INTRO =============== -->
+    <section class="hero-section" aria-label="Introduction">
+      <div class="container">
+        <div class="hero-text">
+          <!-- ===== HERO: Update your intro text here ===== -->
+          <p class="hero-label">// INDEPENDENT SECURITY RESEARCH</p>
+          <h1 class="hero-title">
+            <span class="hero-title-line">Custom Security</span>
+            <span class="hero-title-line hero-title-line--accent">Tools & Recon</span>
+            <span class="hero-title-line">Infrastructure</span>
+          </h1>
+          <p class="hero-desc">
+            <!-- ===== DESCRIPTION: Personalize this text ===== -->
+            A dedicated space for custom-built offensive/defensive tooling, live reconnaissance data,
+            and independent R&D projects. All tools are self-hosted and operated on hardened infrastructure.
+          </p>
+        </div>
+        <div class="hero-stats" aria-label="Quick stats">
+          <!-- ===== STATS: Update counts to match your real data ===== -->
+          <div class="stat-block">
+            <span class="stat-number" data-target="12">0</span>
+            <span class="stat-label">Active Tools</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-number" data-target="847">0</span>
+            <span class="stat-label">Scans Run</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-number" data-target="4">0</span>
+            <span class="stat-label">Experiments</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== PROJECTS GALLERY (My Custom Tools) =============== -->
+    <section class="section tools-section" id="tools" aria-labelledby="tools-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="tools-heading">
+            <span class="section-prefix">01.</span> Custom Tools
+          </h2>
+          <p class="section-sub">// Personal security tooling — built from scratch</p>
+        </div>
+
+        <div class="tools-grid">
+
+          <!-- ===== TOOL CARD 1: Replace all values with your real tool data ===== -->
+          <article class="tool-card" tabindex="0">
+            <div class="tool-card-header">
+              <div class="tool-card-icon" aria-hidden="true">⬡</div>
+              <span class="tool-version-tag">v2.3.1</span>
+            </div>
+            <h3 class="tool-title">SubProbe</h3>
+            <p class="tool-desc">
+              Passive subdomain enumerator with DNS bruteforce, wildcard detection,
+              and live HTTP probing. Outputs JSON & CSV for pipeline ingestion.
+            </p>
+            <div class="tool-card-footer">
+              <div class="tool-tags">
+                <span class="tool-tag">Python</span>
+                <span class="tool-tag">DNS</span>
+                <span class="tool-tag">Recon</span>
+              </div>
+              <!-- ===== BUTTON: Change href to your actual repo link ===== -->
+              <a href="#" class="btn btn--primary" aria-label="View SubProbe source code">View Source</a>
+            </div>
+          </article>
+
+          <!-- ===== TOOL CARD 2: Replace all values with your real tool data ===== -->
+          <article class="tool-card" tabindex="0">
+            <div class="tool-card-header">
+              <div class="tool-card-icon" aria-hidden="true">⬢</div>
+              <span class="tool-version-tag">v1.0.4</span>
+            </div>
+            <h3 class="tool-title">PortSweep-X</h3>
+            <p class="tool-desc">
+              Async TCP/UDP port scanner with banner grabbing and service fingerprinting.
+              Designed for high-speed internal network audits with minimal noise.
+            </p>
+            <div class="tool-card-footer">
+              <div class="tool-tags">
+                <span class="tool-tag">Go</span>
+                <span class="tool-tag">Network</span>
+                <span class="tool-tag">Scanner</span>
+              </div>
+              <!-- ===== BUTTON: Change href to your actual repo link ===== -->
+              <a href="#" class="btn btn--primary" aria-label="View PortSweep-X source code">View Source</a>
+            </div>
+          </article>
+
+          <!-- ===== TOOL CARD 3: Replace all values with your real tool data ===== -->
+          <article class="tool-card" tabindex="0">
+            <div class="tool-card-header">
+              <div class="tool-card-icon" aria-hidden="true">◈</div>
+              <span class="tool-version-tag">v0.9.0-beta</span>
+            </div>
+            <h3 class="tool-title">VaultWatch</h3>
+            <p class="tool-desc">
+              Credential leak monitor that aggregates exposed secrets from public
+              paste sites and code repositories. Webhook-based alerting via Telegram.
+            </p>
+            <div class="tool-card-footer">
+              <div class="tool-tags">
+                <span class="tool-tag">Python</span>
+                <span class="tool-tag">OSINT</span>
+                <span class="tool-tag">Monitor</span>
+              </div>
+              <!-- ===== BUTTON: Change href to your actual repo link ===== -->
+              <a href="#" class="btn btn--primary" aria-label="View VaultWatch source code">View Source</a>
+            </div>
+          </article>
+
+          <!-- ===== ADD MORE TOOL CARDS HERE — copy the <article> block above ===== -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== RECONNAISSANCE VAULT =============== -->
+    <section class="section recon-section" id="recon" aria-labelledby="recon-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="recon-heading">
+            <span class="section-prefix">02.</span> Reconnaissance Vault
+          </h2>
+          <p class="section-sub">// Scan results &amp; collected intelligence data</p>
+        </div>
+
+        <div class="recon-toolbar">
+          <!-- ===== SEARCH BAR: Filters table rows in real-time ===== -->
+          <div class="search-wrapper" role="search">
+            <span class="search-icon" aria-hidden="true">&gt;_</span>
+            <input
+              type="search"
+              id="recon-search"
+              class="search-input"
+              placeholder="filter results..."
+              aria-label="Search reconnaissance results"
+              autocomplete="off"
+              spellcheck="false"
+            />
+          </div>
+          <div class="recon-meta" aria-live="polite" aria-atomic="true">
+            <span id="row-count">5</span> entries
+          </div>
+        </div>
+
+        <div class="table-wrapper" role="region" aria-label="Reconnaissance data table" tabindex="0">
+          <table class="recon-table" id="recon-table">
+            <thead>
+              <tr>
+                <th scope="col" class="col-target">Target</th>
+                <th scope="col" class="col-type">Type</th>
+                <th scope="col" class="col-date">Date</th>
+                <th scope="col" class="col-status">Status</th>
+                <th scope="col" class="col-findings">Findings</th>
+              </tr>
+            </thead>
+            <tbody id="recon-tbody">
+
+              <!-- ===== TABLE ROW 1: Replace with your real scan data ===== -->
+              <tr>
+                <td class="col-target"><span class="target-text">api.example.com</span></td>
+                <td class="col-type"><span class="type-badge type-badge--subdomain">Subdomain</span></td>
+                <td class="col-date">2025-06-10</td>
+                <td class="col-status">
+                  <span class="status-badge status-badge--clean">
+                    <span class="status-badge-dot"></span>Clean
+                  </span>
+                </td>
+                <td class="col-findings">14 subdomains, 3 live hosts</td>
+              </tr>
+
+              <!-- ===== TABLE ROW 2: Replace with your real scan data ===== -->
+              <tr>
+                <td class="col-target"><span class="target-text">192.168.10.0/24</span></td>
+                <td class="col-type"><span class="type-badge type-badge--portscan">Port Scan</span></td>
+                <td class="col-date">2025-06-08</td>
+                <td class="col-status">
+                  <span class="status-badge status-badge--alert">
+                    <span class="status-badge-dot"></span>Alert
+                  </span>
+                </td>
+                <td class="col-findings">Open: 22, 80, 443, 8080, 3306</td>
+              </tr>
+
+              <!-- ===== TABLE ROW 3: Replace with your real scan data ===== -->
+              <tr>
+                <td class="col-target"><span class="target-text">target-corp.id</span></td>
+                <td class="col-type"><span class="type-badge type-badge--osint">OSINT</span></td>
+                <td class="col-date">2025-06-05</td>
+                <td class="col-status">
+                  <span class="status-badge status-badge--review">
+                    <span class="status-badge-dot"></span>Review
+                  </span>
+                </td>
+                <td class="col-findings">2 leaked emails, 1 old credential</td>
+              </tr>
+
+              <!-- ===== TABLE ROW 4: Replace with your real scan data ===== -->
+              <tr>
+                <td class="col-target"><span class="target-text">mail.internal.net</span></td>
+                <td class="col-type"><span class="type-badge type-badge--portscan">Port Scan</span></td>
+                <td class="col-date">2025-06-01</td>
+                <td class="col-status">
+                  <span class="status-badge status-badge--clean">
+                    <span class="status-badge-dot"></span>Clean
+                  </span>
+                </td>
+                <td class="col-findings">Only 25, 465 exposed externally</td>
+              </tr>
+
+              <!-- ===== TABLE ROW 5: Replace with your real scan data ===== -->
+              <tr>
+                <td class="col-target"><span class="target-text">dev.finsky.my.id</span></td>
+                <td class="col-type"><span class="type-badge type-badge--subdomain">Subdomain</span></td>
+                <td class="col-date">2025-05-28</td>
+                <td class="col-status">
+                  <span class="status-badge status-badge--archived">
+                    <span class="status-badge-dot"></span>Archived
+                  </span>
+                </td>
+                <td class="col-findings">7 subdomains, all resolved</td>
+              </tr>
+
+              <!-- ===== ADD MORE TABLE ROWS HERE — copy a <tr> block above ===== -->
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Empty state message shown when search returns nothing -->
+        <div class="table-empty" id="table-empty" aria-live="polite" hidden>
+          <span class="table-empty-icon" aria-hidden="true">//</span>
+          <p>No results match your query.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============== GENERAL EXPERIMENTS =============== -->
+    <section class="section experiments-section" id="experiments" aria-labelledby="experiments-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="experiments-heading">
+            <span class="section-prefix">03.</span> General Experiments
+          </h2>
+          <p class="section-sub">// Miscellaneous builds, prototypes &amp; interesting things</p>
+        </div>
+
+        <div class="experiments-grid">
+
+          <!-- ===== EXPERIMENT 1: Replace with your real experiments ===== -->
+          <article class="experiment-card" tabindex="0">
+            <div class="experiment-card-top">
+              <span class="experiment-number" aria-hidden="true">001</span>
+              <span class="experiment-status experiment-status--active">Active</span>
+            </div>
+            <h3 class="experiment-title">Cloudflare Tunnel Auto-Provisioner</h3>
+            <p class="experiment-desc">
+              Bash script + systemd service that auto-provisions and rotates Cloudflare
+              tunnel credentials on new service deployments.
+            </p>
+            <div class="experiment-meta">
+              <!-- ===== LINK: Replace href with your actual link ===== -->
+              <a href="#" class="experiment-link">→ View Notes</a>
+              <span class="experiment-lang">Bash</span>
+            </div>
+          </article>
+
+          <!-- ===== EXPERIMENT 2: Replace with your real experiments ===== -->
+          <article class="experiment-card" tabindex="0">
+            <div class="experiment-card-top">
+              <span class="experiment-number" aria-hidden="true">002</span>
+              <span class="experiment-status experiment-status--wip">WIP</span>
+            </div>
+            <h3 class="experiment-title">Minimal HTTP Honeypot</h3>
+            <p class="experiment-desc">
+              Lightweight honeypot server logging all inbound requests, headers,
+              and payloads to a structured SQLite database with a JSON export API.
+            </p>
+            <div class="experiment-meta">
+              <!-- ===== LINK: Replace href with your actual link ===== -->
+              <a href="#" class="experiment-link">→ View Notes</a>
+              <span class="experiment-lang">Go</span>
+            </div>
+          </article>
+
+          <!-- ===== EXPERIMENT 3: Replace with your real experiments ===== -->
+          <article class="experiment-card" tabindex="0">
+            <div class="experiment-card-top">
+              <span class="experiment-number" aria-hidden="true">003</span>
+              <span class="experiment-status experiment-status--done">Done</span>
+            </div>
+            <h3 class="experiment-title">SSH Login Geo-Alert Bot</h3>
+            <p class="experiment-desc">
+              Parses auth logs in real-time and fires a Telegram alert with geolocation
+              data whenever a successful SSH login occurs from a new IP or country.
+            </p>
+            <div class="experiment-meta">
+              <!-- ===== LINK: Replace href with your actual link ===== -->
+              <a href="#" class="experiment-link">→ View Notes</a>
+              <span class="experiment-lang">Python</span>
+            </div>
+          </article>
+
+          <!-- ===== EXPERIMENT 4: Replace with your real experiments ===== -->
+          <article class="experiment-card" tabindex="0">
+            <div class="experiment-card-top">
+              <span class="experiment-number" aria-hidden="true">004</span>
+              <span class="experiment-status experiment-status--wip">WIP</span>
+            </div>
+            <h3 class="experiment-title">DNS Exfiltration Detector</h3>
+            <p class="experiment-desc">
+              Passive DNS traffic analyzer that identifies abnormal query patterns
+              consistent with DNS tunneling and data exfiltration techniques.
+            </p>
+            <div class="experiment-meta">
+              <!-- ===== LINK: Replace href with your actual link ===== -->
+              <a href="#" class="experiment-link">→ View Notes</a>
+              <span class="experiment-lang">Python</span>
+            </div>
+          </article>
+
+          <!-- ===== ADD MORE EXPERIMENTS HERE — copy an <article> block above ===== -->
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <!-- ===== FOOTER BRAND: Update domain if needed ===== -->
+          <span class="footer-brand-text">FINSKY<span class="footer-brand-accent">LAB</span></span>
+          <span class="footer-domain">lab.finsky.my.id</span>
+        </div>
+        <div class="footer-info">
+          <!-- ===== FOOTER TEXT: Customize system info ===== -->
+          <p class="footer-sysinfo">
+            Platform: <span class="footer-highlight">Arch Linux Server</span>
+            &nbsp;|&nbsp;
+            Environment: <span class="footer-highlight">Hardened</span>
+            &nbsp;|&nbsp;
+            Managed via <span class="footer-highlight">Cloudflare Tunnel</span>
+          </p>
+          <p class="footer-copy">
+            <!-- ===== FOOTER COPY: Update year and name ===== -->
+            &copy; <span id="footer-year">2025</span> Finsky Lab. All research is conducted in authorized environments.
+          </p>
+        </div>
+      </div>
+      <!-- Terminal-style uptime line -->
+      <div class="footer-terminal-line" aria-hidden="true">
+        <span class="terminal-prefix">root@arch-primary:~$</span>
+        <span class="terminal-cmd" id="uptime-display">uptime --since</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
